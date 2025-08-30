@@ -1,0 +1,19 @@
+{
+  "name": "evng-frontend",
+  "version": "1.0.0",
+  "description": "EVng Frontend Application",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Frontend development server will start here'",
+    "build": "echo 'Frontend build will happen here'",
+    "start": "echo 'Frontend production server will start here'",
+    "lint": "echo 'Frontend linting will happen here'",
+    "test": "echo 'Frontend tests will run here'"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

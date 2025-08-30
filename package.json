@@ -1,0 +1,38 @@
+{
+  "name": "evng",
+  "version": "1.0.0",
+  "description": "EVng - Full Stack Application",
+  "private": true,
+  "scripts": {
+    "dev": "docker-compose -f docker-compose.dev.yml --env-file .env.dev up -d",
+    "dev:stop": "docker-compose -f docker-compose.dev.yml down",
+    "dev:restart": "pnpm run dev:stop && pnpm run dev",
+    "dev:logs": "docker-compose -f docker-compose.dev.yml logs -f",
+    "dev:status": "docker-compose -f docker-compose.dev.yml ps",
+    "dev:clean": "docker-compose -f docker-compose.dev.yml down -v --remove-orphans",
+    "install:all": "pnpm install && cd frontend && pnpm install && cd ../backend && pnpm install",
+    "frontend": "cd frontend && pnpm run dev",
+    "backend": "cd backend && pnpm run dev",
+    "start:all": "concurrently \"pnpm run backend\" \"pnpm run frontend\"",
+    "build": "cd frontend && pnpm run build && cd ../backend && pnpm run build"
+  },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "keywords": [
+    "nodejs",
+    "fullstack",
+    "mongodb",
+    "redis"
+  ],
+  "author": "",
+  "license": "ISC"
+}

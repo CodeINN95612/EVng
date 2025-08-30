@@ -1,0 +1,7 @@
+/volumes
+
+# Ignore environment files containing secrets
+.env*
+!.env.example
+/node_modules
+
