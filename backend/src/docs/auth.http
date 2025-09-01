@@ -1,0 +1,28 @@
+@url = http://localhost:3000/api
+
+###
+POST {{url}}/auth/register
+Content-Type: application/json
+
+{
+    "email": "user@example.com",
+    "username": "user123",
+    "password": "password123"
+}
+
+###
+POST {{url}}/auth/login
+Content-Type: application/json
+
+{
+    "email": "user@example.com",
+    "password": "password123"
+}
+
+###
+POST {{url}}/auth/refresh
+Content-Type: application/json
+
+{
+    "refreshToken": "4MoTiwmRdgE2rGoo7owOtIAmnH2i6JWm"
+}

@@ -13,6 +13,8 @@ interface Config {
   jwt_issuer: string;
   jwt_audience: string;
   jwt_expiration_minutes: number;
+
+  refresh_token_expiration_days: number;
 }
 
 const generateConfig = (): Config => {
@@ -35,6 +37,13 @@ const generateConfig = (): Config => {
       requiredEnvVar(
         'JWT_EXPIRATION_MINUTES',
         process.env.JWT_EXPIRATION_MINUTES,
+      ),
+    ),
+
+    refresh_token_expiration_days: Number(
+      requiredEnvVar(
+        'REFRESH_TOKEN_EXPIRATION_DAYS',
+        process.env.REFRESH_TOKEN_EXPIRATION_DAYS,
       ),
     ),
   };

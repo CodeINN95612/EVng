@@ -7,6 +7,23 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "strict": true,
+    "paths": {
+      "@/*": [
+        "*"
+      ],
+      "@/config/*": [
+        "config/*"
+      ],
+      "@/database/*": [
+        "database/*"
+      ],
+      "@/features/*": [
+        "features/*"
+      ],
+      "@/docs/*": [
+        "docs/*"
+      ]
+    }
   },
   "include": [
     "src/**/*"

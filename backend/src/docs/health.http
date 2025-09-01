@@ -1,0 +1,16 @@
+
+GET http://localhost:3000/health
+
+###
+POST http://localhost:3000/test
+Content-Type: application/json
+
+{
+    "email": "user@example.com",
+    "username": "user123",
+    "password": "password123"
+}
+
+###
+GET http://localhost:3000/api/health-private
+Authorization: Bearer <your_jwt_token>
