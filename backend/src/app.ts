@@ -6,6 +6,7 @@ import {
   disconnectFromDatabase,
 } from '@/database/connection';
 import { authenticationMiddleware } from '@/middlewares/authentication.middleware';
+import { errorHandlingMiddleware } from './middlewares/errorhandling.middleware';
 
 const port = config.port;
 
@@ -17,7 +18,7 @@ app.get('/health', (req, res) => {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/api', authenticationMiddleware);
+app.use(errorHandlingMiddleware);
 app.use('/api', apiRouter);
 
 const startServer = async () => {
