@@ -12,8 +12,8 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
     volumes:
       - ./volumes/mongodb_data:/data/db
-    networks:
-      - dev-network
+    # networks:
+    #   - dev-network
 
   redis:
     image: redis:alpine
@@ -23,9 +23,21 @@ services:
       - "6379:6379"
     volumes:
       - ./volumes/redis_data:/data
-    networks:
-      - dev-network
+    # networks:
+    #   - dev-network
 
-networks:
-  dev-network:
-    driver: bridge
+  minio:
+    image: minio/minio
+    container_name: minio-dev
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    volumes:
+      - ./volumes/minio_data:/data
+    command: server /data --console-address ":9001"
+# networks:
+#   dev-network:
+#     driver: bridge
