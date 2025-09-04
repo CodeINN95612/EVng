@@ -1,0 +1,23 @@
+@url = http://localhost:3000/api
+@token = <your_token_here>
+
+###
+POST {{url}}/events
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Test Event",
+  "description": "An event for testing purposes",
+  "date": "2025-09-04T18:00:00.000Z",
+  "address": "Test Address, City, Country",
+  "mapsUrl": "https://www.google.com/maps"
+}
+
+###
+GET {{url}}/events
+Authorization: Bearer {{token}}
+
+###
+GET {{url}}/events/68b9af884ee7d8b2461dc4e1
+Authorization: Bearer {{token}}

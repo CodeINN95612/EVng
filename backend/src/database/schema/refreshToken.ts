@@ -13,6 +13,7 @@ const refreshTokenSchema = new Schema<IRefreshToken>(
   },
   {
     timestamps: true,
+    strict: true,
   },
 );
 
